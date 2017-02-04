@@ -25,7 +25,10 @@ SECRET_KEY = 'j=c7gkh039z183$i7*)$ah9mxmivp-s@$za6x+qt7hznb3dw-e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'amarin02.pythonanywhere.com'
+]
 
 
 # Application definition
