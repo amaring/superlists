@@ -38,7 +38,7 @@ class FunctionalTest(StaticLiveServerTestCase):
 
 
 
-    def wait_for_row_in_list_table(self, row_text):
+    def check_for_row_in_list_table(self, row_text):
         start_time = time.time()
         while True:
             try:
