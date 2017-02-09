@@ -36,7 +36,7 @@ class NewListTest(TestCase):
     def test_invalid_list_items_arent_saved(self):
         self.client.post('/lists/new', data={'item_text': ''})
         self.assertEqual(List.objects.count(), 0)
-        self.assertContains(Item.objects.count(), 0)
+        self.assertEqual(Item.objects.count(), 0)
 
 
 class ListViewTest(TestCase):
@@ -91,7 +91,7 @@ class ListViewTest(TestCase):
             '/lists/%d/' % (correct_list.id,),
             data={'item_text' : 'A new item for an existing list'}
         )
-        self.assertRedirects(response, 'lists/%d/' % (correct_list.id,))
+        self.assertRedirects(response, '/lists/%d/' % (correct_list.id,))
 
     def test_validation_errors_end_up_on_lists_page(self):
         list_ = List.objects.create()
